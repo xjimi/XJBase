@@ -37,8 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		20DBE8BEEFEEDEF8F1E724A1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		245E149568C30472B4158C30 /* XJBase.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = XJBase.podspec; path = ../XJBase.podspec; sourceTree = "<group>"; };
+		20DBE8BEEFEEDEF8F1E724A1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		245E149568C30472B4158C30 /* XJBase.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XJBase.podspec; path = ../XJBase.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		47F8366A9279C774242ED375 /* Pods_XJBase_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XJBase_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B3E858083ABF4411EEB343F /* Pods-XJBase_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJBase_Example.debug.xcconfig"; path = "Target Support Files/Pods-XJBase_Example/Pods-XJBase_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* XJBase_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XJBase_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +66,7 @@
 		A421F38B71F05CD217EBDE6D /* Pods_XJBase_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XJBase_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5C0D46516821D58AD50FBCE /* Pods-XJBase_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJBase_Tests.release.xcconfig"; path = "Target Support Files/Pods-XJBase_Tests/Pods-XJBase_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BD02A21F1C6F27DE7120AB82 /* Pods-XJBase_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJBase_Tests.debug.xcconfig"; path = "Target Support Files/Pods-XJBase_Tests/Pods-XJBase_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		E7ED73FAFD276BADCAA279B3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E7ED73FAFD276BADCAA279B3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +193,6 @@
 				BD02A21F1C6F27DE7120AB82 /* Pods-XJBase_Tests.debug.xcconfig */,
 				A5C0D46516821D58AD50FBCE /* Pods-XJBase_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -302,11 +302,21 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-XJBase_Example/Pods-XJBase_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/XJBase/XJBase.framework",
+				"${BUILT_PRODUCTS_DIR}/XJCollectionViewManager/XJCollectionViewManager.framework",
+				"${BUILT_PRODUCTS_DIR}/XJScrollViewStateManager/XJScrollViewStateManager.framework",
+				"${BUILT_PRODUCTS_DIR}/XJTableViewManager/XJTableViewManager.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XJBase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XJCollectionViewManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XJScrollViewStateManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XJTableViewManager.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
