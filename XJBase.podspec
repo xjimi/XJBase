@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XJBase'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A short description of XJBase.'
   s.homepage         = 'https://github.com/xjimi/XJBase'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

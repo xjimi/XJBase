@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong, readwrite) XJScrollViewStateManager *scrollViewState;
 
+
+
 @end
 
 @implementation XJBaseListViewController
@@ -22,7 +24,6 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-
     self.baseScrollView = [self createBaseScrollView];
     [self createScrollViewState];
 }
@@ -44,6 +45,8 @@
     __weak typeof(self)weakSelf = self;
     [self.scrollViewState addNetworkStatusChangeBlock:^(NetworkStatus netStatus)
      {
+         if (weakSelf.isNetworkStatusDisabled) return;
+
          if (netStatus != NotReachable) {
              [weakSelf refreshData];
          } else {

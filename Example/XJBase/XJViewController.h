@@ -7,7 +7,8 @@
 //
 
 @import UIKit;
+#import <XJBase/XJBaseListViewController.h>
 
-@interface XJViewController : UIViewController
+@interface XJViewController : XJBaseListViewController
 
 @end

@@ -46,6 +46,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) XJScrollViewStateManager *scrollViewState;
 
+/** 程序啟始時如需關閉網路監聽，請在 [super viewDidLoad] 前或 init 時設定完成 **/
+@property (nonatomic, assign, getter=isNetworkStatusDisabled) BOOL networkStatusDisabled;
+
 @end
 
 NS_ASSUME_NONNULL_END
