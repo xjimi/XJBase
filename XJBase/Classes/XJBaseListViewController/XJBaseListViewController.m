@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong, readwrite) XJScrollViewStateManager *scrollViewState;
 
-
+@property (nonatomic, assign) NetworkStatus netStatus;
 
 @end
 
@@ -45,18 +45,23 @@
     __weak typeof(self)weakSelf = self;
     [self.scrollViewState addNetworkStatusChangeBlock:^(NetworkStatus netStatus)
      {
+         weakSelf.netStatus = netStatus;
          if (weakSelf.isNetworkStatusDisabled) return;
-
-         if (netStatus != NotReachable) {
-             [weakSelf refreshData];
-         } else {
-             [weakSelf.scrollViewState showNetworkError];
-         }
+         [weakSelf processNetworkStatus];
      }];
 
     [self.scrollViewState addDidTapNetworkErrorView:^{
         [weakSelf refreshData];
     }];
+}
+
+- (void)processNetworkStatus
+{
+    if (self.netStatus != NotReachable) {
+        [self refreshData];
+    } else {
+        [self.scrollViewState showNetworkError];
+    }
 }
 
 #pragma mark - Process Pull to Refresh Data
@@ -105,6 +110,15 @@
 
 - (void)showNetworkError {
     [self.scrollViewState showNetworkError];
+}
+
+- (void)setNetworkStatusDisabled:(BOOL)networkStatusDisabled
+{
+    if (_networkStatusDisabled == networkStatusDisabled) return;
+    _networkStatusDisabled = networkStatusDisabled;
+    if (!_networkStatusDisabled) {
+        [self processNetworkStatus];
+    }
 }
 
 @end
