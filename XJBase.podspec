@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XJBase'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'A short description of XJBase.'
   s.homepage         = 'https://github.com/xjimi/XJBase'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -17,9 +17,9 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.source_files = 'XJBase/Classes/**/*'
   s.frameworks = 'UIKit', 'Foundation'
-  s.dependency 'XJScrollViewStateManager'
-  s.dependency 'XJCollectionViewManager'
-  s.dependency 'XJTableViewManager'
+  s.dependency 'XJScrollViewStateManager', '0.1.11'
+  s.dependency 'XJCollectionViewManager', '0.1.3'
+  s.dependency 'XJTableViewManager', '0.1.81'
 
   # s.resource_bundles = {
   #   'XJBase' => ['XJBase/Assets/*.png']
