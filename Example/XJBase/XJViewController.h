@@ -9,6 +9,6 @@
 @import UIKit;
 #import <XJBase/XJBaseListViewController.h>
 
-@interface XJViewController : XJBaseListViewController
+@interface XJViewController : XJBaseListViewController <XJBaseListViewControllerProtocol>
 
 @end

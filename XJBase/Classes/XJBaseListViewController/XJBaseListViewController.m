@@ -10,28 +10,28 @@
 
 @interface XJBaseListViewController ()
 
-@property (nonatomic, weak, readwrite) UIScrollView *baseScrollView;
+@property (nonatomic, weak) UIScrollView *baseScrollView;
 
-@property (nonatomic, strong, readwrite) XJScrollViewStateManager *scrollViewState;
+@property (nonatomic, strong) XJScrollViewStateManager *scrollViewState;
 
-@property (nonatomic, assign) NetworkStatus netStatus;
+@property (nonatomic, assign) CGFloat contentInsetOffset;
+
 
 @end
 
 @implementation XJBaseListViewController
 
+- (void)dealloc {
+    NSLog(@"%s", __func__);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
     self.baseScrollView = [self createBaseScrollView];
     [self createScrollViewState];
-}
-
-- (void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
-    [self.scrollViewState reloadEmptyDataSet];
 }
 
 - (UIScrollView *)createBaseScrollView {
@@ -42,26 +42,6 @@
 {
     self.scrollViewState = [XJScrollViewStateManager
                             managerWithScrollView:self.baseScrollView];
-    __weak typeof(self)weakSelf = self;
-    [self.scrollViewState addNetworkStatusChangeBlock:^(NetworkStatus netStatus)
-     {
-         weakSelf.netStatus = netStatus;
-         if (weakSelf.isNetworkStatusDisabled) return;
-         [weakSelf processNetworkStatus];
-     }];
-
-    [self.scrollViewState addDidTapNetworkErrorView:^{
-        [weakSelf refreshData];
-    }];
-}
-
-- (void)processNetworkStatus
-{
-    if (self.netStatus != NotReachable) {
-        [self refreshData];
-    } else {
-        [self.scrollViewState showNetworkError];
-    }
 }
 
 #pragma mark - Process Pull to Refresh Data
@@ -69,7 +49,7 @@
 - (void)addPullToRefresh
 {
     __weak typeof(self)weakSelf = self;
-    [self.scrollViewState addPullToRefreshWithActionHandler:^{
+    [self.scrollViewState pullToRefreshBlock:^{
         [weakSelf refreshData];
     }];
 }
@@ -77,15 +57,12 @@
 - (void)refreshData {
 }
 
-- (void)parserRefreshData:(id)responseObject {
-}
-
 #pragma mark - Process Load More Data
 
 - (void)addLoadMore
 {
     __weak typeof(self)weakSelf = self;
-    [self.scrollViewState addLoadMoreWithActionHandler:^{
+    [self.scrollViewState loadMoreBlock:^{
         [weakSelf loadMoreData];
     }];
 }
@@ -93,7 +70,8 @@
 - (void)loadMoreData {
 }
 
-- (void)parserLoadMoreData:(id)responseObject {
+- (void)finishPullToRefresh {
+    [self.scrollViewState finishPullToRefresh];
 }
 
 - (void)showLoadMore {
@@ -104,20 +82,28 @@
     [self.scrollViewState finishLoadMore];
 }
 
-- (void)finishPullToRefresh {
-    [self.scrollViewState finishPullToRefresh];
+- (void)showLoading {
+    [self.scrollViewState showLoading];
 }
 
 - (void)showNetworkError {
     [self.scrollViewState showNetworkError];
 }
 
-- (void)setNetworkStatusDisabled:(BOOL)networkStatusDisabled
+- (void)adjustContentInset
 {
-    if (_networkStatusDisabled == networkStatusDisabled) return;
-    _networkStatusDisabled = networkStatusDisabled;
-    if (!_networkStatusDisabled) {
-        [self processNetworkStatus];
+    if (self.navigationController.navigationBar)
+    {
+        if (@available(iOS 11.0, *)) {
+            self.baseScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
+        } else {
+            self.edgesForExtendedLayout = UIRectEdgeTop;
+        }
+        
+        CGFloat offset = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
+        offset += CGRectGetHeight(self.navigationController.navigationBar.frame);
+        self.scrollViewState.messageBar.startPosY = -offset;
+        self.contentInsetOffset = -offset;
     }
 }
 

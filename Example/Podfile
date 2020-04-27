@@ -1,11 +1,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
-source 'git@gitlab.com:set.app/ios/setpods.git'
 use_frameworks!
 platform :ios, '9.0'
 
 target 'XJBase_Example' do
   pod 'XJBase', :path => '../'
-
+  pod 'AFNetworking'
+  pod 'Masonry'
+  
   target 'XJBase_Tests' do
     inherit! :search_paths
 

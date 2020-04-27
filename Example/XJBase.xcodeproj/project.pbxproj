@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		00AF9EFE1B5744A7041E6B23 /* Pods_XJBase_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F8366A9279C774242ED375 /* Pods_XJBase_Tests.framework */; };
+		187CDE3D24568FBD00AB5C13 /* AlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 187CDE3524568FBD00AB5C13 /* AlbumModel.m */; };
+		187CDE3E24568FBD00AB5C13 /* AlbumHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 187CDE3724568FBD00AB5C13 /* AlbumHeader.m */; };
+		187CDE3F24568FBD00AB5C13 /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187CDE3824568FBD00AB5C13 /* AlbumCell.xib */; };
+		187CDE4024568FBD00AB5C13 /* AlbumHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187CDE3B24568FBD00AB5C13 /* AlbumHeader.xib */; };
+		187CDE4124568FBD00AB5C13 /* AlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187CDE3C24568FBD00AB5C13 /* AlbumCell.m */; };
 		38E14DDAB9E786D3B3278989 /* Pods_XJBase_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A421F38B71F05CD217EBDE6D /* Pods_XJBase_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -37,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		187CDE3424568FBD00AB5C13 /* AlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumModel.h; sourceTree = "<group>"; };
+		187CDE3524568FBD00AB5C13 /* AlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumModel.m; sourceTree = "<group>"; };
+		187CDE3724568FBD00AB5C13 /* AlbumHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumHeader.m; sourceTree = "<group>"; };
+		187CDE3824568FBD00AB5C13 /* AlbumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
+		187CDE3924568FBD00AB5C13 /* AlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCell.h; sourceTree = "<group>"; };
+		187CDE3A24568FBD00AB5C13 /* AlbumHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumHeader.h; sourceTree = "<group>"; };
+		187CDE3B24568FBD00AB5C13 /* AlbumHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumHeader.xib; sourceTree = "<group>"; };
+		187CDE3C24568FBD00AB5C13 /* AlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCell.m; sourceTree = "<group>"; };
 		20DBE8BEEFEEDEF8F1E724A1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		245E149568C30472B4158C30 /* XJBase.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XJBase.podspec; path = ../XJBase.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		47F8366A9279C774242ED375 /* Pods_XJBase_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XJBase_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +108,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		187CDE3324568FBD00AB5C13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				187CDE3424568FBD00AB5C13 /* AlbumModel.h */,
+				187CDE3524568FBD00AB5C13 /* AlbumModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		187CDE3624568FBD00AB5C13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				187CDE3724568FBD00AB5C13 /* AlbumHeader.m */,
+				187CDE3824568FBD00AB5C13 /* AlbumCell.xib */,
+				187CDE3924568FBD00AB5C13 /* AlbumCell.h */,
+				187CDE3A24568FBD00AB5C13 /* AlbumHeader.h */,
+				187CDE3B24568FBD00AB5C13 /* AlbumHeader.xib */,
+				187CDE3C24568FBD00AB5C13 /* AlbumCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +169,8 @@
 			children = (
 				6003F59C195388D20070C39A /* XJAppDelegate.h */,
 				6003F59D195388D20070C39A /* XJAppDelegate.m */,
+				187CDE3324568FBD00AB5C13 /* Model */,
+				187CDE3624568FBD00AB5C13 /* View */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* XJViewController.h */,
 				6003F5A6195388D20070C39A /* XJViewController.m */,
@@ -247,6 +284,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = xjimi;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 4X5X5XJA6V;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -279,7 +319,9 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				187CDE3F24568FBD00AB5C13 /* AlbumCell.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				187CDE4024568FBD00AB5C13 /* AlbumHeader.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,8 +344,9 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-XJBase_Example/Pods-XJBase_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
-				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/XJBase/XJBase.framework",
 				"${BUILT_PRODUCTS_DIR}/XJCollectionViewManager/XJCollectionViewManager.framework",
 				"${BUILT_PRODUCTS_DIR}/XJScrollViewStateManager/XJScrollViewStateManager.framework",
@@ -311,8 +354,9 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XJBase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XJCollectionViewManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XJScrollViewStateManager.framework",
@@ -375,8 +419,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* XJAppDelegate.m in Sources */,
+				187CDE3D24568FBD00AB5C13 /* AlbumModel.m in Sources */,
+				187CDE3E24568FBD00AB5C13 /* AlbumHeader.m in Sources */,
 				6003F5A7195388D20070C39A /* XJViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				187CDE4124568FBD00AB5C13 /* AlbumCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +551,7 @@
 			baseConfigurationReference = 4B3E858083ABF4411EEB343F /* Pods-XJBase_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4X5X5XJA6V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XJBase/XJBase-Prefix.pch";
 				INFOPLIST_FILE = "XJBase/XJBase-Info.plist";
@@ -519,6 +567,7 @@
 			baseConfigurationReference = 667BB7EAC190E1DA17FC0AC2 /* Pods-XJBase_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4X5X5XJA6V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XJBase/XJBase-Prefix.pch";
 				INFOPLIST_FILE = "XJBase/XJBase-Info.plist";
